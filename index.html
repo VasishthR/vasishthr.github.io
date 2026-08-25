@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Think. Code. Score. | An ICSE Java Guide by Vasishth Rungta</title>
+<meta name="description" content="Vasishth Rungta scored a perfect 100 in ICSE Computer Applications, then wrote Think. Code. Score. — 16 chapters, 280+ Java programs, 10 sample papers. Buy on Amazon or get 2 free sample papers.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://vasishthrungta.com/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<meta property="og:type" content="book">
+<meta property="og:site_name" content="Think. Code. Score.">
+<meta property="og:title" content="Think. Code. Score. | An ICSE Java Guide by Vasishth Rungta">
+<meta property="og:description" content="A perfect ICSE Computer Applications score, then a book about how. 16 chapters, 280+ Java programs, 10 sample papers.">
+<meta property="og:url" content="https://vasishthrungta.com/">
+<meta property="og:image" content="https://vasishthrungta.com/images/vasishth-headshot.png">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Think. Code. Score. | An ICSE Java Guide by Vasishth Rungta">
+<meta name="twitter:description" content="A perfect ICSE Computer Applications score, then a book about how. 16 chapters, 280+ Java programs, 10 sample papers.">
+<meta name="twitter:image" content="https://vasishthrungta.com/images/vasishth-headshot.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Book",
+      "name": "Think. Code. Score.",
+      "author": { "@type": "Person", "name": "Vasishth Rungta" },
+      "description": "An ICSE Computer Applications guide for Classes 9 and 10 — 16 chapters, 280+ Java programs and 10 board-style sample papers.",
+      "inLanguage": "en",
+      "genre": "Education",
+      "url": "https://vasishthrungta.com/",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.amazon.in/dp/9379031769",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "seller": { "@type": "Organization", "name": "Amazon.in" }
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "Vasishth Rungta",
+      "url": "https://vasishthrungta.com/",
+      "image": "https://vasishthrungta.com/images/vasishth-headshot.png",
+      "jobTitle": "Student Author",
+      "alumniOf": { "@type": "EducationalOrganization", "name": "La Martiniere for Boys, Kolkata" }
+    },
+    {
+      "@type": "WebSite",
+      "name": "Think. Code. Score.",
+      "url": "https://vasishthrungta.com/"
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   THINK. CODE. SCORE. — single-page book landing site
+   Editorial book-brand system: bone paper, ink, one rust accent.
+   ============================================================ */
+
+:root{
+  --paper:#f6f1e6;
+  --paper-deep:#efe6d2;
+  --ink:#18130f;
+  --ink-soft:#5a5045;
+  --black:#141110;
+  --black-soft:#1c1815;
+  --red:#af3327;
+  --red-deep:#8a271d;
+  --line:#ddd0b4;
+  --line-dark:rgba(246,241,230,0.14);
+  --cream-text:rgba(246,241,230,0.72);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3{font-family:var(--serif);color:var(--ink);line-height:1.05;margin:0;letter-spacing:-0.01em;}
+p{margin:0 0 1em;}
+em{font-style:italic;color:var(--red);}
+.container{max-width:1180px;margin:0 auto;padding:0 32px;}
+
+/* rhythm bands */
+.band-cream{background:var(--paper);background-image:var(--grain);background-blend-mode:multiply;}
+.band-deep{background:var(--paper-deep);background-image:var(--grain);background-blend-mode:multiply;}
+.band-black{background:var(--black);color:var(--cream-text);background-image:var(--grain);background-blend-mode:overlay;}
+.band-black h2,.band-black h3{color:#fff;}
+section{padding:96px 0;}
+.section-tight{padding:64px 0;}
+@media (max-width:760px){ section{padding:64px 0;} }
+
+.eyebrow{
+  display:flex;align-items:center;gap:12px;
+  font-family:var(--sans);font-size:0.74rem;font-weight:700;
+  letter-spacing:0.16em;text-transform:uppercase;color:var(--red);
+  margin-bottom:1.1em;
+}
+.band-black .eyebrow{color:#e0a99f;}
+.eyebrow .rule{width:30px;height:1px;background:currentColor;display:inline-block;opacity:.8;}
+
+h1{font-size:clamp(3rem,8vw,6rem);font-weight:900;letter-spacing:-0.02em;}
+h2{font-size:clamp(2rem,4vw,3rem);font-weight:600;}
+h3{font-size:1.35rem;font-weight:600;}
+.lede{font-size:1.15rem;color:var(--ink-soft);max-width:600px;}
+.band-black .lede{color:var(--cream-text);}
+
+/* buttons — rectangular, editorial, no pills */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 30px;font-family:var(--sans);font-weight:700;
+  font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;
+  border:1.5px solid transparent;cursor:pointer;white-space:nowrap;
+  transition:transform .25s var(--ease),background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease);
+}
+.btn-red{background:var(--red);color:#fff;}
+.btn-red:hover{background:var(--red-deep);transform:translateY(-2px);}
+.btn-ink{background:var(--ink);color:var(--paper);}
+.btn-ink:hover{background:#000;transform:translateY(-2px);}
+.btn-line{border-color:var(--ink);color:var(--ink);}
+.btn-line:hover{background:var(--ink);color:var(--paper);}
+.btn-line-light{border-color:rgba(246,241,230,0.4);color:#fff;}
+.btn-line-light:hover{background:#fff;color:var(--black);border-color:#fff;}
+.btn-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-top:1.8em;}
+.text-arrow{font-weight:700;font-size:0.86rem;letter-spacing:0.02em;color:var(--red);border-bottom:1.5px solid rgba(175,51,39,.35);padding-bottom:2px;}
+.text-arrow:hover{border-color:var(--red);}
+
+/* nav */
+.site-nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(246,241,230,0.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-wrap{max-width:1180px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.nav-mark{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:700;font-size:1rem;}
+.nav-mark .dot{width:9px;height:9px;background:var(--red);border-radius:50%;display:inline-block;}
+.nav-links{display:flex;gap:26px;align-items:center;flex-wrap:wrap;}
+.nav-links a{font-size:0.76rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-soft);}
+.nav-links a:hover{color:var(--ink);}
+.nav-buy{background:var(--red);color:#fff !important;padding:10px 20px;}
+.nav-buy:hover{background:var(--red-deep);}
+@media (max-width:900px){ .nav-links{display:none;} }
+
+/* ---------------- HERO ---------------- */
+.hero{position:relative;overflow:hidden;background:var(--paper);background-image:var(--grain);background-blend-mode:multiply;}
+.hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;min-height:88vh;}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:60px 0;}
+.hero-copy .container{padding-right:48px;}
+.hero-stats{
+  display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:2.4em;
+  padding-top:1.8em;border-top:1px solid var(--line);
+  font-size:0.86rem;color:var(--ink-soft);
+}
+.hero-stats b{font-family:var(--serif);color:var(--ink);font-weight:700;}
+.hero-photo-wrap{position:relative;background:#0e0c0a;}
+.hero-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(0.15) contrast(1.05) sepia(0.08);}
+.hero-book{
+  position:absolute;left:-6%;bottom:8%;width:190px;
+  transform:rotate(-7deg);
+  box-shadow:0 30px 60px rgba(0,0,0,0.45);
+  z-index:3;
+}
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;min-height:auto;}
+  .hero-photo-wrap{height:56vh;order:-1;}
+  .hero-copy .container{padding-right:32px;}
+  .hero-book{left:20px;width:130px;bottom:-40px;}
+}
+
+/* book cover component */
+.book-cover{
+  aspect-ratio:5/7.6;border-radius:2px;
+  background:linear-gradient(155deg,#1c1310,var(--red-deep) 130%);
+  color:#fff;padding:26px 22px;display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;overflow:hidden;
+  box-shadow:6px 6px 0 rgba(0,0,0,0.12),-3px 0 0 rgba(0,0,0,0.25) inset;
+}
+.book-cover::after{content:"";position:absolute;right:0;top:0;bottom:0;width:6px;background:repeating-linear-gradient(180deg,rgba(255,255,255,0.12) 0 2px,transparent 2px 5px);}
+.book-cover .tag{font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.65);font-weight:700;}
+.book-cover .title{font-family:var(--serif);font-size:1.6rem;line-height:1.05;font-weight:700;margin-top:10px;}
+.book-cover .auth{font-size:0.72rem;color:rgba(255,255,255,0.75);letter-spacing:0.03em;margin-top:auto;}
+.book-cover.lg .title{font-size:2.5rem;}
+.book-cover.lg{padding:40px 34px;}
+
+/* ---------------- NUMBERED LIST ---------------- */
+.num-list{margin-top:2.2em;display:flex;flex-direction:column;gap:0;}
+.num-item{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:22px 0;border-top:1px solid var(--line);}
+.num-item:last-child{border-bottom:1px solid var(--line);}
+.band-black .num-item{border-color:var(--line-dark);}
+.num-mark{font-family:var(--serif);font-weight:300;font-size:2.2rem;color:var(--red);line-height:1;}
+.num-item h3{margin-bottom:6px;}
+.num-item p{color:var(--ink-soft);margin-bottom:0;max-width:520px;}
+.band-black .num-item p{color:var(--cream-text);}
+
+/* ---------------- Two-col ---------------- */
+.two-col{display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;align-items:start;}
+.two-col.rev{grid-template-columns:1.15fr 0.85fr;}
+@media (max-width:900px){ .two-col,.two-col.rev{grid-template-columns:1fr;} }
+
+/* ---------------- Placeholder tiles ---------------- */
+.ph-tile{
+  border:1.5px dashed rgba(24,19,15,0.28);
+  background:rgba(24,19,15,0.03);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;text-align:center;padding:20px;color:var(--ink-soft);
+}
+.band-black .ph-tile{border-color:rgba(255,255,255,0.22);background:rgba(255,255,255,0.03);color:var(--cream-text);}
+.ph-tile svg{width:26px;height:26px;opacity:0.55;}
+.ph-tile span{font-size:0.72rem;font-weight:600;letter-spacing:0.02em;}
+.ph-tile small{font-size:0.66rem;opacity:0.7;text-transform:uppercase;letter-spacing:0.06em;}
+
+/* filmstrip */
+.filmstrip{display:flex;gap:20px;overflow-x:auto;padding:6px 2px 18px;margin-top:2em;scrollbar-width:thin;}
+.filmstrip::-webkit-scrollbar{height:6px;}
+.filmstrip::-webkit-scrollbar-thumb{background:var(--line);}
+.filmstrip .ph-tile{flex:0 0 220px;aspect-ratio:3/4;}
+.filmstrip .review-tile{flex:0 0 300px;}
+
+/* ---------------- Resource / lead-gate ---------------- */
+.resource-wrap{
+  border:1px solid var(--line);background:var(--paper);
+  padding:0;overflow:hidden;
+}
+.resource-top{border-top:4px solid var(--red);padding:44px 44px 8px;}
+.resource-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+@media (max-width:860px){ .resource-grid{grid-template-columns:1fr;} }
+.resource-panel{padding:0 44px 44px;}
+.resource-list{margin:1.6em 0 0;padding:0;list-style:none;}
+.resource-list li{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:0.92rem;color:var(--ink-soft);}
+.resource-list li:last-child{border-bottom:1px solid var(--line);}
+.resource-list b{color:var(--ink);}
+
+.gate-form{display:flex;flex-direction:column;gap:12px;margin-top:1.6em;max-width:420px;}
+.gate-form input{
+  padding:15px 16px;border:1.5px solid var(--ink);background:#fff;
+  font-family:var(--sans);font-size:0.95rem;color:var(--ink);
+}
+.gate-form input:focus{outline:2px solid var(--red);outline-offset:2px;}
+.gate-fineprint{font-size:0.76rem;color:var(--ink-soft);margin-top:10px;}
+
+.unlocked{display:none;margin-top:1.6em;}
+.unlocked.show{display:block;}
+.unlock-msg{font-weight:700;color:var(--red);font-size:0.85rem;letter-spacing:0.03em;text-transform:uppercase;margin-bottom:14px;}
+.download-row{display:flex;flex-direction:column;gap:10px;}
+.download-item{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:16px 18px;border:1px solid var(--line);background:#fff;
+}
+.download-item span{font-weight:600;font-size:0.92rem;}
+
+/* ---------------- Reviews ---------------- */
+.review-tile{
+  border:1px solid var(--line);background:#fff;padding:0;
+  display:flex;flex-direction:column;
+}
+.review-shot{aspect-ratio:16/10;}
+.review-body{padding:20px 22px 22px;}
+.stars{color:var(--red);font-size:0.85rem;letter-spacing:2px;margin-bottom:10px;}
+.review-body p{font-size:0.92rem;color:var(--ink-soft);margin-bottom:10px;}
+.review-who{font-size:0.76rem;font-weight:700;color:var(--ink);}
+.review-badge{font-size:0.62rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:#b06a2c;margin-top:4px;display:block;}
+
+/* ---------------- Workshops table ---------------- */
+.session-log{border-top:1px solid var(--line);margin-top:2em;}
+.session-row{
+  display:grid;grid-template-columns:120px 1fr 140px;gap:20px;
+  padding:20px 0;border-bottom:1px solid var(--line);align-items:center;
+}
+.session-row .date{font-family:var(--serif);font-weight:600;color:var(--ink);}
+.session-row .topic{color:var(--ink-soft);font-size:0.92rem;}
+.session-row .count{font-size:0.8rem;color:var(--ink-soft);text-align:right;}
+.session-empty{padding:36px 0;text-align:center;color:var(--ink-soft);font-size:0.92rem;}
+@media (max-width:700px){ .session-row{grid-template-columns:1fr;gap:6px;} .session-row .count{text-align:left;} }
+
+/* ---------------- Impact numerals ---------------- */
+.impact-band{display:flex;flex-wrap:wrap;}
+.impact-cell{
+  flex:1 1 220px;padding:44px 32px;text-align:center;
+  border-left:1px solid var(--line-dark);
+}
+.impact-cell:first-child{border-left:none;}
+.impact-num{font-family:var(--serif);font-weight:700;font-size:clamp(2.6rem,5vw,4rem);color:#fff;line-height:1;display:block;}
+.impact-label{font-size:0.76rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--cream-text);margin-top:10px;display:block;}
+@media (max-width:700px){ .impact-cell{flex:1 1 45%;border-left:none;border-top:1px solid var(--line-dark);} }
+
+/* ---------------- Invite / form embed ---------------- */
+.form-shell{border:1px solid var(--line);background:#fff;padding:36px;}
+.google-form-embed{width:100%;min-height:640px;border:none;}
+
+/* ---------------- Events gallery ---------------- */
+.gallery{
+  display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:140px;gap:14px;margin-top:2.2em;
+}
+.gallery .ph-tile:nth-child(1){grid-column:span 2;grid-row:span 2;}
+.gallery .ph-tile:nth-child(4){grid-row:span 2;}
+.gallery .ph-tile:nth-child(5){grid-column:span 2;}
+@media (max-width:760px){
+  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:120px;}
+  .gallery .ph-tile:nth-child(1){grid-column:span 2;grid-row:span 1;}
+  .gallery .ph-tile:nth-child(4){grid-row:span 1;}
+  .gallery .ph-tile:nth-child(5){grid-column:span 1;}
+}
+
+/* ---------------- Pull quote ---------------- */
+.pull-quote{
+  font-family:var(--serif);font-style:italic;font-weight:500;
+  font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.45;color:#fff;
+  max-width:760px;position:relative;padding-left:36px;
+}
+.pull-quote::before{content:"\201C";position:absolute;left:-8px;top:-18px;font-size:4rem;color:var(--red);font-family:var(--serif);opacity:0.8;}
+.pull-quote .attrib{display:block;margin-top:24px;font-family:var(--sans);font-style:normal;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:#e0a99f;font-weight:700;}
+
+/* ---------------- Footer ---------------- */
+.site-footer{background:var(--black);color:var(--cream-text);padding:64px 0 28px;}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;padding-bottom:40px;border-bottom:1px solid var(--line-dark);}
+.footer-mark{font-family:var(--serif);font-weight:700;color:#fff;font-size:1.2rem;display:flex;align-items:center;gap:10px;}
+.footer-mark .dot{width:9px;height:9px;background:var(--red);border-radius:50%;}
+.footer-contact a{display:block;color:var(--cream-text);font-size:0.9rem;margin-bottom:8px;}
+.footer-contact a:hover{color:#fff;}
+.footer-social{display:flex;gap:10px;margin-top:10px;}
+.footer-social a{width:34px;height:34px;border:1px solid rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.footer-social a:hover{border-color:var(--red);color:var(--red);}
+.footer-social svg{width:13px;height:13px;fill:currentColor;}
+.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:24px;font-size:0.76rem;color:rgba(246,241,230,0.4);}
+.footer-motto{letter-spacing:0.08em;text-transform:uppercase;font-weight:700;}
+.footer-motto em{color:var(--red);font-style:normal;}
+
+/* ---------------- Reveal ---------------- */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-wrap">
+    <a href="#top" class="nav-mark"><span class="dot"></span>Think. Code. Score.</a>
+    <div class="nav-links">
+      <a href="#book">The Book</a>
+      <a href="#resources">Free Sample</a>
+      <a href="#workshops">Workshops</a>
+      <a href="#impact">Impact</a>
+      <a href="#invite">Invite</a>
+      <a href="https://www.amazon.in/dp/9379031769" target="_blank" rel="noopener" class="nav-buy">Buy the Book</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header id="top" class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="container">
+        <div class="eyebrow"><span class="rule"></span>A Perfect ICSE Score. Then A Book About How.</div>
+        <h1>Think.<br>Code.<br>Score.</h1>
+        <p class="lede" style="margin-top:0.6em;">Vasishth Rungta scored a perfect 100 in ICSE Computer Applications, then wrote the guide he wished he'd had: 16 chapters, 280+ Java programs, 10 sample papers built to feel like the real exam.</p>
+        <div class="btn-row">
+          <a href="https://www.amazon.in/dp/9379031769" target="_blank" rel="noopener" class="btn btn-red">Buy on Amazon →</a>
+          <a href="#resources" class="btn btn-line">Get 2 Free Sample Papers</a>
+        </div>
+        <div class="hero-stats">
+          <span><b data-count-to="500" data-suffix="+">0</b> at the launch</span>
+          <span><b data-count-to="100" data-suffix="">0</b> copies donated</span>
+          <span><b data-count-to="10" data-suffix="">0</b> school libraries</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img src="images/vasishth-headshot.png" alt="Vasishth Rungta, author of Think. Code. Score." width="1122" height="1402">
+      <div class="book-cover hero-book">
+        <span class="tag">ICSE Computer Applications</span>
+        <div class="title">Think.<br>Code.<br>Score.</div>
+        <span class="auth">Vasishth Rungta</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= THE BOOK ================= -->
+<section id="book" class="band-cream">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <div class="book-cover lg" style="max-width:280px;">
+          <span class="tag">ICSE Computer Applications · Classes 9–10</span>
+          <div class="title">Think.<br>Code.<br>Score.</div>
+          <span class="auth">Vasishth Rungta</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="eyebrow"><span class="rule"></span>01 — The Book</div>
+        <h2>Built from one student's exam, not a syllabus committee.</h2>
+        <p class="lede">Most ICSE Computer Applications students learn Java by copying programs they don't understand. This book runs the opposite way: every chapter starts with the logic, then shows the code, then flags the exact mistake examiners deduct marks for.</p>
+
+        <div class="num-list">
+          <div class="num-item">
+            <span class="num-mark">01</span>
+            <div><h3>Concept-first chapters</h3><p>Sixteen chapters covering the full ICSE syllabus, each idea built on the one before it.</p></div>
+          </div>
+          <div class="num-item">
+            <span class="num-mark">02</span>
+            <div><h3>280+ worked programs</h3><p>Real Java code with the reasoning shown, not just the final output.</p></div>
+          </div>
+          <div class="num-item">
+            <span class="num-mark">03</span>
+            <div><h3>10 board-style papers</h3><p>Full-length practice matched to real exam format, structure and pacing.</p></div>
+          </div>
+          <div class="num-item">
+            <span class="num-mark">04</span>
+            <div><h3>Beyond the syllabus</h3><p>A closing section for students who finish the book wanting more Computer Science.</p></div>
+          </div>
+        </div>
+
+        <p style="margin-top:1.8em;"><strong>Who it's for:</strong> Class 9 and 10 students studying ICSE Computer Applications, teachers who want classroom-ready material, and parents helping with revision without a programming background.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:4rem;">
+      <div class="eyebrow"><span class="rule"></span>Inside the Book</div>
+      <h3 style="font-size:1.5rem;margin-bottom:0.3em;">A look at the sample pages</h3>
+      <div class="filmstrip">
+        <div class="ph-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Concept chapter spread</span>
+          <small>Add scan</small>
+        </div>
+        <div class="ph-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Worked Java program</span>
+          <small>Add scan</small>
+        </div>
+        <div class="ph-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Sample paper page</span>
+          <small>Add scan</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <a href="https://www.amazon.in/dp/9379031769" target="_blank" rel="noopener" class="btn btn-ink">Buy on Amazon →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FREE SAMPLE PAPERS (lead gate) ================= -->
+<section id="resources" class="band-deep section-tight">
+  <div class="container">
+    <div class="resource-wrap reveal">
+      <div class="resource-top">
+        <div class="eyebrow"><span class="rule"></span>Free Download</div>
+        <h2 style="font-size:clamp(1.7rem,3vw,2.3rem);">Two full sample papers. No charge, just your email.</h2>
+        <p class="lede">Both papers follow the exact board format and come with a complete answer key, the same standard as the ten papers inside the book.</p>
+      </div>
+      <div class="resource-grid">
+        <div class="resource-panel">
+          <ul class="resource-list">
+            <li><b>01</b>&nbsp; Full board-format questions, timed to match the real paper.</li>
+            <li><b>02</b>&nbsp; Complete answer key with working shown, not just final answers.</li>
+            <li><b>03</b>&nbsp; Same style and difficulty as the 10 papers inside the book.</li>
+          </ul>
+        </div>
+        <div class="resource-panel">
+          <div id="sample-gate">
+            <!-- TODO: point this form at a real capture endpoint (Formspree / Mailchimp / ConvertKit)
+                 before relying on it for real leads. Right now it only unlocks the section
+                 client-side and does not store or send the email anywhere. -->
+            <form id="sample-form" class="gate-form" novalidate>
+              <input id="sample-email" type="email" placeholder="you@school.edu" required aria-label="Email address">
+              <button type="submit" class="btn btn-red">Send Me the Papers</button>
+            </form>
+            <p class="gate-fineprint">One email. No spam. Used only to send your papers and occasional updates about new resources.</p>
+          </div>
+          <div id="sample-unlocked" class="unlocked">
+            <div class="unlock-msg">You're in — grab your papers below</div>
+            <div class="download-row">
+              <div class="download-item">
+                <span>Sample Paper 1 (PDF)</span>
+                <a href="#" class="text-arrow" title="Add real PDF link">Download →</a>
+              </div>
+              <div class="download-item">
+                <span>Sample Paper 2 + Answer Key (PDF)</span>
+                <a href="#" class="text-arrow" title="Add real PDF link">Download →</a>
+              </div>
+            </div>
+            <p class="gate-fineprint">Placeholder links — swap in the real PDF files once they're ready.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY THIS BOOK EXISTS ================= -->
+<section id="journey" class="band-black">
+  <div class="container">
+    <div class="eyebrow"><span class="rule"></span>02 — Why This Book Exists</div>
+    <h2 style="max-width:680px;">Not a syllabus rewrite. A record of what actually worked.</h2>
+
+    <div class="num-list" style="margin-top:2.6em;">
+      <div class="num-item">
+        <span class="num-mark">01</span>
+        <div><h3>The Problem</h3><p>Java felt like a list of code to copy, not a subject to understand. It worked, until the exam asked something the textbook hadn't shown.</p></div>
+      </div>
+      <div class="num-item">
+        <span class="num-mark">02</span>
+        <div><h3>The Turning Point</h3><p>I stopped memorising and started asking why. Once the logic made sense, the code stopped needing to be memorised — I scored 97.6% in the ICSE 2025 board exam, including a perfect 100 in Computer Applications.</p></div>
+      </div>
+      <div class="num-item">
+        <span class="num-mark">03</span>
+        <div><h3>The Book</h3><p>Think. Code. Score. is that method, in the order I wish someone had taught it to me. Every reader gets the shortcut I had to find on my own.</p></div>
+      </div>
+    </div>
+
+    <div style="margin-top:3.5em;">
+      <p class="pull-quote">I didn't understand Java until I stopped trying to memorise it and started asking why it worked.
+        <span class="attrib">— Vasishth Rungta, Author</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= READER REVIEWS ================= -->
+<section id="reviews" class="band-cream">
+  <div class="container">
+    <div class="eyebrow"><span class="rule"></span>03 — What Readers Say</div>
+    <h2>Amazon reviews, in readers' own words.</h2>
+    <p class="lede" style="margin-top:0.6em;">Screenshots pending — these will be swapped for real reviews from the Amazon listing.</p>
+
+    <div class="filmstrip">
+      <div class="review-tile">
+        <div class="review-shot ph-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Add Amazon screenshot</span>
+        </div>
+        <div class="review-body">
+          <div class="stars">★★★★★</div>
+          <p>"Placeholder review text — replace with a real quote from the Amazon listing."</p>
+          <span class="review-who">Reader Name</span>
+          <span class="review-badge">Verified Purchase</span>
+        </div>
+      </div>
+      <div class="review-tile">
+        <div class="review-shot ph-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Add Amazon screenshot</span>
+        </div>
+        <div class="review-body">
+          <div class="stars">★★★★★</div>
+          <p>"Placeholder review text — replace with a real quote from the Amazon listing."</p>
+          <span class="review-who">Reader Name</span>
+          <span class="review-badge">Verified Purchase</span>
+        </div>
+      </div>
+      <div class="review-tile">
+        <div class="review-shot ph-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Add Amazon screenshot</span>
+        </div>
+        <div class="review-body">
+          <div class="stars">★★★★★</div>
+          <p>"Placeholder review text — replace with a real quote from the Amazon listing."</p>
+          <span class="review-who">Reader Name</span>
+          <span class="review-badge">Verified Purchase</span>
+        </div>
+      </div>
+      <div class="review-tile">
+        <div class="review-shot ph-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Add Amazon screenshot</span>
+        </div>
+        <div class="review-body">
+          <div class="stars">★★★★★</div>
+          <p>"Placeholder review text — replace with a real quote from the Amazon listing."</p>
+          <span class="review-who">Reader Name</span>
+          <span class="review-badge">Verified Purchase</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WORKSHOPS ================= -->
+<section id="workshops" class="band-deep">
+  <div class="container">
+    <div class="eyebrow"><span class="rule"></span>04 — In the Classroom</div>
+    <h2>The book, taught live.</h2>
+    <p class="lede" style="margin-top:0.6em;">Think. Code. Score. — Understanding Java Beyond the Textbook is a free 45–60 minute interactive session for Classes 9 and 10, covering conceptual Java, common exam mistakes, live problem-solving and what comes after the syllabus.</p>
+
+    <div class="session-log">
+      <div class="session-empty">No sessions logged yet — the first booked school appears here with its date, topic, student count, photos and feedback.</div>
+    </div>
+
+    <div class="filmstrip" style="margin-top:0.5em;">
+      <div class="ph-tile" style="flex-basis:240px;aspect-ratio:4/3;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span>Workshop photo</span><small>Add photo</small>
+      </div>
+      <div class="ph-tile" style="flex-basis:240px;aspect-ratio:4/3;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span>Workshop photo</span><small>Add photo</small>
+      </div>
+      <div class="ph-tile" style="flex-basis:240px;aspect-ratio:4/3;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span>Workshop photo</span><small>Add photo</small>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <a href="#invite" class="btn btn-ink">Invite This Session to Your School →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= IMPACT ================= -->
+<section id="impact" class="band-black section-tight">
+  <div class="container">
+    <div class="eyebrow"><span class="rule"></span>05 — The Numbers So Far</div>
+    <h2 style="max-width:600px;">Schools reached, students reached, resources used.</h2>
+  </div>
+  <div class="impact-band" style="margin-top:2.5rem;border-top:1px solid var(--line-dark);">
+    <div class="impact-cell reveal">
+      <span class="impact-num" data-count-to="500" data-suffix="+">0</span>
+      <span class="impact-label">Launch Attendees</span>
+    </div>
+    <div class="impact-cell reveal">
+      <span class="impact-num" data-count-to="100" data-suffix="">0</span>
+      <span class="impact-label">Copies Donated</span>
+    </div>
+    <div class="impact-cell reveal">
+      <span class="impact-num" data-count-to="10" data-suffix="">0</span>
+      <span class="impact-label">School Libraries</span>
+    </div>
+    <div class="impact-cell reveal">
+      <span class="impact-num" data-count-to="21" data-suffix="">0</span>
+      <span class="impact-label">Students Tutored</span>
+    </div>
+  </div>
+  <div class="container">
+    <p style="margin-top:2.5rem;color:var(--cream-text);font-size:0.88rem;max-width:560px;">Workshop-specific numbers — schools visited, students reached in live sessions, workshops conducted — start counting from the first booked school and will update here.</p>
+  </div>
+</section>
+
+<!-- ================= INVITE A SESSION ================= -->
+<section id="invite" class="band-cream">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <div class="eyebrow"><span class="rule"></span>06 — Bring This to Your School</div>
+        <h2>One short form starts the conversation.</h2>
+        <p class="lede">Free for schools. Submit your details and Vasishth's team follows up to confirm a date, format and any technical requirements. One accompanying adult joins for logistics.</p>
+        <div style="margin-top:2em;">
+          <p style="margin-bottom:6px;"><strong>Email:</strong> <a href="mailto:vasishth.rungta@gmail.com" class="text-arrow">vasishth.rungta@gmail.com</a></p>
+          <p style="margin-bottom:0;"><strong>Phone:</strong> <a href="tel:+919831616672" class="text-arrow">+91 98316 16672</a></p>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="form-shell">
+          <h3 style="margin-bottom:0.4em;">Session Request Form</h3>
+          <p style="color:var(--ink-soft);font-size:0.88rem;">Replace the block below with your published Google Form's embed — Google Forms → Send → Embed &lt;&gt; → paste the iframe here.</p>
+          <!--
+            REPLACE THIS COMMENT WITH YOUR GOOGLE FORM EMBED, e.g.:
+            <iframe class="google-form-embed" src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true">Loading…</iframe>
+          -->
+          <div class="ph-tile" style="aspect-ratio:auto;padding:40px 20px;margin-top:14px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M7 9h10M7 13h6"/></svg>
+            <span>Google Form not connected yet</span>
+            <small>Add embed code</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EVENTS ================= -->
+<section id="events" class="band-black">
+  <div class="container">
+    <div class="eyebrow"><span class="rule"></span>07 — Events &amp; Appearances</div>
+    <h2>From the launch, and beyond.</h2>
+    <div class="gallery">
+      <div class="ph-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Book Launch, 2025</span><small>Add photo</small></div>
+      <div class="ph-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Library Donation</span><small>Add photo</small></div>
+      <div class="ph-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>School Visit</span><small>Add photo</small></div>
+      <div class="ph-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Press / Media</span><small>Add photo</small></div>
+      <div class="ph-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Workshop Highlights</span><small>Add photo</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-mark"><span class="dot"></span>Think. Code. Score.</div>
+        <p style="color:var(--cream-text);font-size:0.88rem;max-width:280px;margin-top:14px;">An ICSE Computer Applications guide by student author Vasishth Rungta, La Martiniere for Boys, Kolkata.</p>
+        <div class="footer-social">
+          <a href="mailto:vasishth.rungta@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M2 5.5A1.5 1.5 0 013.5 4h17A1.5 1.5 0 0122 5.5v13A1.5 1.5 0 0120.5 20h-17A1.5 1.5 0 012 18.5v-13zm2 .4v.2l8 5.6 8-5.6v-.2H4zm16 2.5l-7.4 5.2a1 1 0 01-1.2 0L4 8.4V18h16V8.4z"/></svg></a>
+          <a href="#" aria-label="Instagram" title="Add Instagram link"><svg viewBox="0 0 24 24"><path d="M12 2c-2.72 0-3.06.01-4.12.06-1.06.05-1.78.22-2.41.46a4.87 4.87 0 00-1.76 1.15A4.87 4.87 0 002.56 5.43c-.24.63-.41 1.35-.46 2.41C2.05 8.9 2.04 9.24 2.04 12s.01 3.1.06 4.16c.05 1.06.22 1.78.46 2.41.25.65.6 1.2 1.15 1.76.56.55 1.11.9 1.76 1.15.63.24 1.35.41 2.41.46 1.06.05 1.4.06 4.12.06s3.06-.01 4.12-.06c1.06-.05 1.78-.22 2.41-.46a4.87 4.87 0 001.76-1.15 4.87 4.87 0 001.15-1.76c.24-.63.41-1.35.46-2.41.05-1.06.06-1.4.06-4.16s-.01-3.1-.06-4.16c-.05-1.06-.22-1.78-.46-2.41a4.87 4.87 0 00-1.15-1.76A4.87 4.87 0 0018.53 1.5c-.63-.24-1.35-.41-2.41-.46C15.06 1 14.72.99 12 .99zm0 4.85a5.15 5.15 0 100 10.3 5.15 5.15 0 000-10.3zm0 8.5a3.35 3.35 0 110-6.7 3.35 3.35 0 010 6.7zm5.36-8.7a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z"/></svg></a>
+          <a href="#" aria-label="LinkedIn" title="Add LinkedIn link"><svg viewBox="0 0 24 24"><path d="M6.94 5a2 2 0 11-4-.002 2 2 0 014 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-3.96 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <a href="mailto:vasishth.rungta@gmail.com">vasishth.rungta@gmail.com</a>
+        <a href="tel:+919831616672">+91 98316 16672</a>
+        <a href="https://www.amazon.in/dp/9379031769" target="_blank" rel="noopener">Buy on Amazon →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Vasishth Rungta. All rights reserved.</span>
+      <span class="footer-motto">Think<em>.</em> Code<em>.</em> Score<em>.</em></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // reveal on scroll
+  var revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && revealEls.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add("is-visible"); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+  }
+
+  // count-up numerals
+  var counters = document.querySelectorAll("[data-count-to]");
+  function animateCounter(el) {
+    var target = parseFloat(el.getAttribute("data-count-to"));
+    var suffix = el.getAttribute("data-suffix") || "";
+    var duration = 1300, start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (progress < 1) requestAnimationFrame(step); else el.textContent = target + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+  if (counters.length) {
+    if ("IntersectionObserver" in window) {
+      var cio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { animateCounter(entry.target); cio.unobserve(entry.target); }
+        });
+      }, { threshold: 0.4 });
+      counters.forEach(function (el) { cio.observe(el); });
+    } else {
+      counters.forEach(animateCounter);
+    }
+  }
+
+  // sample paper email gate (client-side demo only — see TODO comment in HTML)
+  var form = document.getElementById("sample-form");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var email = document.getElementById("sample-email").value.trim();
+      var valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!valid) { document.getElementById("sample-email").style.borderColor = "#af3327"; return; }
+      document.getElementById("sample-gate").style.display = "none";
+      var unlocked = document.getElementById("sample-unlocked");
+      unlocked.classList.add("show");
+    });
+  }
+});
+</script>
+</body>
+</html>
