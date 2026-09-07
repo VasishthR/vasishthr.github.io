@@ -200,8 +200,6 @@ h3{font-size:1.35rem;font-weight:600;}
 .book-cover .tag{font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.65);font-weight:700;}
 .book-cover .title{font-family:var(--serif);font-size:1.6rem;line-height:1.05;font-weight:700;margin-top:10px;}
 .book-cover .auth{font-size:0.72rem;color:rgba(255,255,255,0.75);letter-spacing:0.03em;margin-top:auto;}
-.book-cover.lg .title{font-size:2.5rem;}
-.book-cover.lg{padding:40px 34px;}
 
 /* ---------------- NUMBERED LIST ---------------- */
 .num-list{margin-top:2.2em;display:flex;flex-direction:column;gap:0;}
@@ -236,6 +234,10 @@ h3{font-size:1.35rem;font-weight:600;}
 .filmstrip::-webkit-scrollbar-thumb{background:var(--line);}
 .filmstrip .ph-tile{flex:0 0 220px;aspect-ratio:3/4;}
 .filmstrip .review-tile{flex:0 0 300px;}
+.filmstrip .scan-tile{flex:0 0 220px;border:1px solid var(--line);background:#fff;display:flex;flex-direction:column;}
+.scan-shot{aspect-ratio:3/4;overflow:hidden;background:var(--paper-deep);}
+.scan-shot img{width:100%;height:100%;object-fit:cover;display:block;}
+.scan-caption{padding:12px 14px;font-size:0.78rem;font-weight:600;color:var(--ink);text-align:center;}
 
 /* ---------------- Resource / lead-gate ---------------- */
 .resource-wrap{
@@ -401,11 +403,7 @@ h3{font-size:1.35rem;font-weight:600;}
   <div class="container">
     <div class="two-col">
       <div class="reveal">
-        <div class="book-cover lg" style="max-width:280px;">
-          <span class="tag">ICSE Computer Applications · Classes 9–10</span>
-          <div class="title">Think.<br>Code.<br>Score.</div>
-          <span class="auth">Vasishth Rungta</span>
-        </div>
+        <img src="/images/Book%20Cover.jpg" alt="Think. Code. Score. book cover" style="max-width:280px;width:100%;border-radius:2px;box-shadow:6px 6px 0 rgba(0,0,0,0.12);">
       </div>
       <div class="reveal">
         <div class="eyebrow"><span class="rule"></span>01 — The Book</div>
@@ -439,20 +437,17 @@ h3{font-size:1.35rem;font-weight:600;}
       <div class="eyebrow"><span class="rule"></span>Inside the Book</div>
       <h3 style="font-size:1.5rem;margin-bottom:0.3em;">A look at the sample pages</h3>
       <div class="filmstrip">
-        <div class="ph-tile">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>Concept chapter spread</span>
-          <small>Add scan</small>
+        <div class="scan-tile">
+          <div class="scan-shot"><img src="/images/Book%20Concept.png" alt="Concept chapter spread from Think. Code. Score." loading="lazy"></div>
+          <div class="scan-caption">Concept chapter spread</div>
         </div>
-        <div class="ph-tile">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>Worked Java program</span>
-          <small>Add scan</small>
+        <div class="scan-tile">
+          <div class="scan-shot"><img src="/images/Book%20Program.png" alt="Worked Java program page from Think. Code. Score." loading="lazy"></div>
+          <div class="scan-caption">Worked Java program</div>
         </div>
-        <div class="ph-tile">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>Sample paper page</span>
-          <small>Add scan</small>
+        <div class="scan-tile">
+          <div class="scan-shot"><img src="/images/Book%20Sample.png" alt="Sample paper page from Think. Code. Score." loading="lazy"></div>
+          <div class="scan-caption">Sample paper page</div>
         </div>
       </div>
     </div>
