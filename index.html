@@ -379,9 +379,78 @@
       background: var(--red-deep);
     }
 
+    /* mobile nav toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      z-index: 101;
+    }
+
+    .hamburger-bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: var(--ink);
+      transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
+    }
+
     @media (max-width:900px) {
+      .nav-toggle {
+        display: flex;
+      }
+
       .nav-links {
-        display: none;
+        position: fixed;
+        top: 57px;
+        left: 0;
+        right: 0;
+        background: rgba(246, 241, 230, 0.98);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 24px 32px;
+        gap: 18px;
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), visibility 0.3s var(--ease);
+      }
+
+      .nav-links.is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .nav-links a {
+        font-size: 0.88rem;
+        padding: 4px 0;
+      }
+
+      .nav-buy {
+        text-align: center;
+        margin-top: 6px;
+      }
+
+      .nav-toggle.is-active .hamburger-bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      .nav-toggle.is-active .hamburger-bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .nav-toggle.is-active .hamburger-bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
       }
     }
 
@@ -1131,6 +1200,155 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* ---------------- Workshop Gallery ---------------- */
+    .workshop-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 2em;
+    }
+
+    .workshop-tile {
+      border: 1px solid var(--line);
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+    }
+
+    .workshop-tile:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .workshop-shot {
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: var(--paper-deep);
+    }
+
+    .workshop-shot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform 0.4s var(--ease);
+    }
+
+    .workshop-shot.landscape img {
+      object-position: center center;
+    }
+
+    .workshop-shot.portrait img {
+      object-position: top center;
+    }
+
+    .workshop-tile:hover .workshop-shot img {
+      transform: scale(1.04);
+    }
+
+    .workshop-caption {
+      padding: 14px 16px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-align: center;
+      border-top: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    @media (max-width: 900px) {
+      .workshop-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 20px;
+      }
+
+      section {
+        padding: 48px 0;
+      }
+
+      .section-tight {
+        padding: 36px 0;
+      }
+
+      .eyebrow {
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+      }
+
+      .lede {
+        font-size: 1.02rem;
+      }
+
+      .btn-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-copy {
+        padding: 40px 0 30px;
+      }
+
+      .hero-copy .container {
+        padding-right: 20px;
+      }
+
+      .hero-photo-wrap {
+        height: 48vh;
+      }
+
+      .hero-book {
+        left: 16px;
+        width: 120px;
+        bottom: -28px;
+      }
+
+      .num-item {
+        grid-template-columns: 44px 1fr;
+        gap: 14px;
+        padding: 16px 0;
+      }
+
+      .num-mark {
+        font-size: 1.75rem;
+      }
+
+      .workshop-gallery {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .form-shell {
+        padding: 24px 18px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 
@@ -1139,7 +1357,12 @@
   <nav class="site-nav">
     <div class="nav-wrap">
       <a href="#top" class="nav-mark"><span class="dot"></span>Think. Code. Score.</a>
-      <div class="nav-links">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <div class="nav-links" id="nav-links">
         <a href="#book">The Book</a>
         <a href="#resources">Free Sample</a>
         <a href="#workshops">Workshops</a>
@@ -1190,7 +1413,7 @@
     <div class="container">
       <div class="two-col">
         <div class="reveal">
-          <img src="/images/Book%20Cover.jpg" alt="Think. Code. Score. book cover"
+          <img src="images/Book%20Cover.jpg" alt="Think. Code. Score. book cover"
             style="max-width:280px;width:100%;border-radius:2px;box-shadow:6px 6px 0 rgba(0,0,0,0.12);">
         </div>
         <div class="reveal">
@@ -1242,17 +1465,17 @@
         <h3 style="font-size:1.5rem;margin-bottom:0.3em;">A look at the sample pages</h3>
         <div class="filmstrip">
           <div class="scan-tile">
-            <div class="scan-shot"><img src="/images/Book%20Concept.png"
+            <div class="scan-shot"><img src="images/Book%20Concept.png"
                 alt="Concept chapter spread from Think. Code. Score." loading="lazy"></div>
             <div class="scan-caption">Concept chapter spread</div>
           </div>
           <div class="scan-tile">
-            <div class="scan-shot"><img src="/images/Book%20Program.png"
+            <div class="scan-shot"><img src="images/Book%20Program.png"
                 alt="Worked Java program page from Think. Code. Score." loading="lazy"></div>
             <div class="scan-caption">Worked Java program</div>
           </div>
           <div class="scan-tile">
-            <div class="scan-shot"><img src="/images/Book%20Sample.png" alt="Sample paper page from Think. Code. Score."
+            <div class="scan-shot"><img src="images/Book%20Sample.png" alt="Sample paper page from Think. Code. Score."
                 loading="lazy"></div>
             <div class="scan-caption">Sample paper page</div>
           </div>
@@ -1417,40 +1640,35 @@
   <section id="workshops" class="band-deep">
     <div class="container">
       <div class="eyebrow"><span class="rule"></span>04 — In the Classroom</div>
-      <h2>The book, taught live.</h2>
-      <p class="lede" style="margin-top:0.6em;">Think. Code. Score. — Understanding Java Beyond the Textbook is a free
-        45–60 minute interactive session for Classes 9 and 10, covering conceptual Java, common exam mistakes, live
-        problem-solving and what comes after the syllabus.</p>
-
+      <h2>From the book to the classroom.</h2>
+      <p class="lede" style="margin-top:0.6em;">Think. Code. Score. is also the foundation for interactive Computer
+        Applications sessions for ICSE students. Vasishth works directly with students on Java logic, programming
+        strategy, common mistakes and live problem-solving.</p>
+      <p class="lede" style="margin-top:0.6em;">The workshops are designed to make students think through a program
+        before they begin writing code, the same principle at the heart of the book.</p>
       <div class="session-log">
         <div class="session-empty">No sessions logged yet — the first booked school appears here with its date, topic,
           student count, photos and feedback.</div>
       </div>
 
-      <div class="filmstrip" style="margin-top:0.5em;">
-        <div class="ph-tile" style="flex-basis:240px;aspect-ratio:4/3;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="1" />
-            <circle cx="8.5" cy="8.5" r="1.5" />
-            <path d="M21 15l-5-5L5 21" />
-          </svg>
-          <span>Workshop photo</span><small>Add photo</small>
+      <div class="workshop-gallery">
+        <div class="workshop-tile reveal">
+          <div class="workshop-shot landscape">
+            <img src="images/workshop-1.jpg" alt="Interactive Computer Applications Workshop Session with Vasishth Rungta" loading="lazy">
+          </div>
+          <div class="workshop-caption">Interactive Classroom Session</div>
         </div>
-        <div class="ph-tile" style="flex-basis:240px;aspect-ratio:4/3;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="1" />
-            <circle cx="8.5" cy="8.5" r="1.5" />
-            <path d="M21 15l-5-5L5 21" />
-          </svg>
-          <span>Workshop photo</span><small>Add photo</small>
+        <div class="workshop-tile reveal">
+          <div class="workshop-shot portrait">
+            <img src="images/workshop-2.jpg" alt="Java Logic & Programming Strategy Session" loading="lazy">
+          </div>
+          <div class="workshop-caption">Java Logic &amp; Live Problem-Solving</div>
         </div>
-        <div class="ph-tile" style="flex-basis:240px;aspect-ratio:4/3;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="1" />
-            <circle cx="8.5" cy="8.5" r="1.5" />
-            <path d="M21 15l-5-5L5 21" />
-          </svg>
-          <span>Workshop photo</span><small>Add photo</small>
+        <div class="workshop-tile reveal">
+          <div class="workshop-shot portrait">
+            <img src="images/workshop-3.jpg" alt="Student Guidance & Board Prep Q&A" loading="lazy" style="object-position: top center;">
+          </div>
+          <div class="workshop-caption">Student Guidance &amp; Board Prep Q&amp;A</div>
         </div>
       </div>
 
@@ -1603,6 +1821,22 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
+      // mobile navigation menu toggle
+      var navToggle = document.getElementById("nav-toggle");
+      var navLinks = document.getElementById("nav-links");
+      if (navToggle && navLinks) {
+        navToggle.addEventListener("click", function () {
+          navToggle.classList.toggle("is-active");
+          navLinks.classList.toggle("is-open");
+        });
+        navLinks.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            navToggle.classList.remove("is-active");
+            navLinks.classList.remove("is-open");
+          });
+        });
+      }
+
       // reveal on scroll
       var revealEls = document.querySelectorAll(".reveal");
       if ("IntersectionObserver" in window && revealEls.length) {
