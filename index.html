@@ -465,8 +465,9 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      min-height: 88vh;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: minmax(0, 1fr);
+      height: clamp(560px, 78vh, 780px);
       align-items: stretch;
     }
 
@@ -474,7 +475,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 60px 0;
+      padding: 48px 0;
     }
 
     .hero-copy .container {
@@ -532,10 +533,15 @@
       box-shadow: 0 35px 65px rgba(0, 0, 0, 0.55);
     }
 
+    .book-cover.hero-book {
+      position: absolute;
+    }
+
     @media (max-width:980px) {
       .hero-grid {
         grid-template-columns: 1fr;
-        min-height: auto;
+        grid-template-rows: auto auto;
+        height: auto;
       }
 
       .hero-photo-wrap {
